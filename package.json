@@ -1,0 +1,38 @@
+{
+  "name": "mvc_design",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-handlebars": "^3.0.2",
+    "express-sesssion": "^1.15.5",
+    "handlebars": "^4.1.1",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "node-geocoder": "^3.22.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.2.1"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IndraNal/ConnectPlayLocal.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/IndraNal/ConnectPlayLocal/issues"
+  },
+  "homepage": "https://github.com/IndraNal/ConnectPlayLocal#readme",
+  "description": ""
+}
