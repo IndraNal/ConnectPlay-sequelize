@@ -34,7 +34,7 @@ $(document).ready(function() {
 
           
   $.each( result, function( key, value ) {
-  alert( 'lat:' + value.Latitude  + " long: " + value.Longitude );
+
  marker = L.marker([value.Latitude , value.Longitude]).addTo(mymap);
   marker.bindPopup("<b>Hello world!" + value.UserName +"<\/b><br>I am online.").openPopup();
 
