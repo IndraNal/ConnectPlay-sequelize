@@ -23,15 +23,24 @@ h3{
   opacity: 0.85;
   padding: 30px
 }
-
-.create-profile {
-  padding: 5px;
-  margin: 5px;
-  background: grey;
+h2{
+  font-size: 15px;
+  font-family: 'Righteous', cursive;
+  text-align: center;
 }
-
-.form-group {
-  margin-bottom: 5px;
+#signIn, #user_info {
+  background-color: azure; 
+  opacity: 0.85;
+  padding: 30px
+}
+body {
+  background-image: url("connectplay background.jpg");
+  background-repeat: no-repeat;
+}
+#formText{
+  background-color: azure;
+  opacity: 0.85;
+  padding: 20px;
 }
 footer{
   text-align: center;

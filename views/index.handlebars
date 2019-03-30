@@ -1,9 +1,8 @@
 <h1><img src="assets/css/connectplaylogo2.png" class = "picture"/>Connect + Play</h1>
 
 
-
-
-<h2>Login Form</h2>
+<div class = "container" id = "signIn">
+<h2 id = "signIntitle">sign in</h2>
 <div class="form-group">
     <label for="username">Username</label>
     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="username">
@@ -17,9 +16,5 @@
   <p> Dont have an Account <a href="Registration"> Sign up</a> </p>
    <p> Home <a href="home"> Home</a> </p>
 </form>
+</div>
 
-{{!-- let normalizedPath = require('path').join(__dirname, "models")
-    require('fs').readdirSync(normalizedPath).forEach((file) => {
-        sequelize.import('./models/' + file)
-    })
-    let {User, Permissions} = sequelize.models --}}
