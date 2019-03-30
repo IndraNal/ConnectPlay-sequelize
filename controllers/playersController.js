@@ -108,4 +108,4 @@ module.exports = function(app) {
 //   failureRedirect: '/signup'
 // }
 
-// ));
+
