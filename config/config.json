@@ -1,8 +1,7 @@
 {
-<<<<<<< Updated upstream
   "development": {
     "username": "root",
-    "password": "Japonica343",
+    "password": "Sahana123$",
     "database": "connect_play",
     "host": "127.0.0.1",
     "port": 3306,
@@ -16,34 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "Sahana123$",
-    "database": "connect_play",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
-=======
-	"development": {
-		"username": "root",
-		"password": "lockdee23",
-		"database": "connect_play",
-		"host": "127.0.0.1",
-		"port": 3306,
-		"dialect": "mysql"
-	},
-	"test": {
-		"username": "root",
-		"password": "Sahana123$",
-		"database": "connect_play",
-		"host": "127.0.0.1",
-		"dialect": "mysql"
-	},
-	"production": {
-		"username": "root",
-		"password": "Sahana123$",
-		"database": "connect_play",
-		"host": "127.0.0.1",
-		"dialect": "mysql"
-	}
->>>>>>> Stashed changes
 }
