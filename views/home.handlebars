@@ -1,5 +1,7 @@
+<h2>Player List</h2>
+
 <ul>
-    <table class="table table-hovered">
+    <table id = "user_info" class = "container">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">First Name</th>
@@ -7,8 +9,7 @@
                 <th scope="col"> Address</th>
                 <th scope="col">city</th>
                 <th scope="col">state</th>
-                <th scope="col"> Zipcode</th>
-               
+                <th scope="col"> Zipcode</th> 
             </tr>
         </thead>
         <tbody>
@@ -20,9 +21,9 @@
                 <td>{{CityName}}</td>
                 <td>{{State}}</td>
                 <td>{{ZipCode}}</td>
-                <td>{{Latitude}}</td>
-                <td>{{Longitude}}</td>
-                          </tr>
+                {{!-- <td>{{Latitude}}</td>
+                <td>{{Longitude}}</td> --}}
+            </tr>
             {{/each}}
         </tbody>
     </table>
