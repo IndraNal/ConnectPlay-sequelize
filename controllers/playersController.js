@@ -76,4 +76,8 @@ app.post("/api/players", function (req, response) {
 //   failureRedirect: '/signup'
 // }
 
+<<<<<<< Updated upstream
 // ));
+=======
+// ));
+>>>>>>> Stashed changes
