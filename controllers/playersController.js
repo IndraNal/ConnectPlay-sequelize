@@ -14,7 +14,11 @@ var options = {
 
 var geocoder = NodeGeocoder(options);
 // Import the model (player.js) to use its database functions.
+<<<<<<< HEAD
 //var player = require('../models/player.js');
+=======
+var player = require('../models/player.js');
+>>>>>>> master
 // //passport Config
 // require("../config/passport.js")(passport);
 
@@ -22,6 +26,7 @@ var geocoder = NodeGeocoder(options);
 // app.use(passport.initialize());
 // app.use(passport.session());
 
+<<<<<<< HEAD
 module.exports = function (app) {
 	// Create all our routes and set up logic within those routes where required.
 
@@ -32,10 +37,23 @@ module.exports = function (app) {
 	});
 	app.get('/api/players', function (req, res) {
 		db.Player.findAll({}).then(function (data) {
+=======
+module.exports = function(app) {
+	// Create all our routes and set up logic within those routes where required.
+
+	app.get('/Registration', function(req, res) {
+		db.Player.findAll({}).then(function(players) {
+			res.render('Registration', { data: players });
+		});
+	});
+	app.get('/api/players', function(req, res) {
+		db.Player.findAll({}).then(function(data) {
+>>>>>>> master
 			res.json(data);
 		});
 	});
 
+<<<<<<< HEAD
 	app.get('/', function (req, res) {
 		res.render('map');
 	});
@@ -46,6 +64,18 @@ module.exports = function (app) {
 				console.log(res);
 			})
 			.then(function (res) {
+=======
+	app.get('/', function(req, res) {
+		res.render('map');
+	});
+
+	app.post('/Registration', function(req, response) {
+		geocoder
+			.geocode({ address: req.body.Address, country: 'USA', zipcode: req.body.ZipCode }, function(err, res) {
+				console.log(res);
+			})
+			.then(function(res) {
+>>>>>>> master
 				console.log(res);
 
 				db.Player.create({
@@ -62,7 +92,11 @@ module.exports = function (app) {
 					Longitude: res[0].longitude
 				});
 			})
+<<<<<<< HEAD
 			.then(function (player) {
+=======
+			.then(function(player) {
+>>>>>>> master
 				response.json({ player });
 			});
 	});
