@@ -24,9 +24,8 @@ $(function () {
     }).then(
       function () {
         console.log("created new player");
-        // Reload the page to get the updated list
-        // location.reload();
-        location.href = "/"
+        // Redirect to map after successful post
+        location.href = "/map"
       }
     );
   });

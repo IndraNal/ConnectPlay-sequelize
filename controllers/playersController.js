@@ -14,26 +14,19 @@ var options = {
 var geocoder = NodeGeocoder(options);
 
 module.exports = function (app) {
-	// Create all our routes and set up logic within those routes where required.
 
-	// app.get('/Registration', function (req, res) {
-	// 	db.Player.findAll({}).then(function (players) {
-	// 		res.render('Registration', { data: players });
-	// 	});
-	// });
 	app.get('/api/players', function (req, res) {
 		db.Player.findAll({}).then(function (data) {
 			res.json(data);
 		});
 	});
 
-	app.get('/map', function (req, res) {
-		res.render('map');
-	});
-
-
 	app.get('/', function (req, res) {
 		res.render('Registration');
+	});
+
+	app.get('/map', function (req, res) {
+		res.render('map');
 	});
 
 	app.post('/api/players', function (req, response) {
@@ -63,4 +56,3 @@ module.exports = function (app) {
 			});
 	});
 };
-
