@@ -6,7 +6,7 @@ var NodeGeocoder = require('node-geocoder');
 
 var options = {
 	provider: 'mapquest',
-	apiKey: process.env.SECRETKEY,
+	apiKey: 'sX4NwELW6q0I1WjDtEvnSTLBwIU3o4hl',
 	// Optional depending on the providers
 	httpAdapter: 'https', // Default
 	formatter: null // 'gpx', 'string', ...
