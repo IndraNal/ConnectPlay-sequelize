@@ -1,51 +1,47 @@
 // Requiring our Player model
 var db = require('../models');
-
+require('dotenv').config();
 // geocoder
 var NodeGeocoder = require('node-geocoder');
 
 var options = {
 	provider: 'mapquest',
-	apiKey: 'sX4NwELW6q0I1WjDtEvnSTLBwIU3o4hl',
+	apiKey: process.env.SECRETKEY,
 	// Optional depending on the providers
 	httpAdapter: 'https', // Default
 	formatter: null // 'gpx', 'string', ...
 };
-
 var geocoder = NodeGeocoder(options);
-// Import the model (player.js) to use its database functions.
-//var player = require('../models/player.js');
-// //passport Config
-// require("../config/passport.js")(passport);
 
-// //passport middle
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-module.exports = function(app) {
+module.exports = function (app) {
 	// Create all our routes and set up logic within those routes where required.
 
-	app.get('/Registration', function(req, res) {
-		db.Player.findAll({}).then(function(players) {
-			res.render('Registration', { data: players });
-		});
-	});
-	app.get('/api/players', function(req, res) {
-		db.Player.findAll({}).then(function(data) {
+	// app.get('/Registration', function (req, res) {
+	// 	db.Player.findAll({}).then(function (players) {
+	// 		res.render('Registration', { data: players });
+	// 	});
+	// });
+	app.get('/api/players', function (req, res) {
+		db.Player.findAll({}).then(function (data) {
 			res.json(data);
 		});
 	});
 
-	app.get('/', function(req, res) {
+	app.get('/map', function (req, res) {
 		res.render('map');
 	});
 
-	app.post('/api/players', function(req, response) {
+
+	app.get('/', function (req, res) {
+		res.render('Registration');
+	});
+
+	app.post('/api/players', function (req, response) {
 		geocoder
-			.geocode({ address: req.body.Address, country: 'USA', zipcode: req.body.ZipCode }, function(err, res) {
+			.geocode({ address: req.body.Address, country: 'USA', zipcode: req.body.ZipCode }, function (err, res) {
 				console.log(res);
 			})
-			.then(function(res) {
+			.then(function (res) {
 				console.log(res);
 
 				db.Player.create({
@@ -62,16 +58,9 @@ module.exports = function(app) {
 					Longitude: res[0].longitude
 				});
 			})
-			.then(function(player) {
+			.then(function (player) {
 				response.json({ player });
 			});
 	});
 };
-
-// app.post('/signup', passport.authenticate('local-signup', {
-//   successRedirect: '/dashboard',
-
-//   failureRedirect: '/signup'
-// }
-
 
