@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
@@ -34,5 +35,5 @@
     "url": "https://github.com/IndraNal/ConnectPlayLocal/issues"
   },
   "homepage": "https://github.com/IndraNal/ConnectPlayLocal#readme",
-  "description": ""
+  "description": "ConnectPlay is a Social media web app that allows players to connect, communicate and coordinate board game meetups and events with in their local zip code. The users will have there their name and location displayed on a map which will allow for a easy identification of other users in the area."
 }
