@@ -1,12 +1,12 @@
 <link crossorigin="" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
   rel="stylesheet">
-<link href="../assets/css/map.css" rel="stylesheet">
+<link href="../assets/css/maps.css" rel="stylesheet">
 <script crossorigin=""
   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
   src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 
-<div class="container" id="mapid"></div>
+<div id="mapid"></div>
 <script>
   var marker;
   var mymap = L.map('mapid').setView([39.8283, -98.5795], 5);
@@ -16,6 +16,7 @@
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1Ijoic2hhbmtyYW5nYSIsImEiOiJjanRxaGx0d2cwMnRqM3lxb3puaDl2cm4yIn0.-kk7WgAgOXrXS2AkedhL2A'
   }).addTo(mymap);
+  //var marker = L.marker([latLon]).addTo(mymap);
   $(document).ready(function () {
     $.ajax({
       type: "GET",
@@ -23,14 +24,12 @@
       success: function (result) {
         console.log(result);
         $.each(result, function (key, value) {
+          //alert( 'lat:' + value.Latitude  + " long: " + value.Longitude );
           marker = L.marker([value.Latitude, value.Longitude]).addTo(mymap);
           marker.bindPopup("<b>Hello world!" + value.UserName + "<\/b><br>I am online.").openPopup();
-          $.each(result, function (key, value) {
-            marker = L.marker([value.Latitude, value.Longitude]).addTo(mymap);
-            marker.bindPopup("<b>Hello world!" + value.UserName + "<\/b><br>I am online.").openPopup();
 
-          })
-        }
+        })
+      }
     })
   }
   );
