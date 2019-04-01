@@ -8,7 +8,6 @@
 
 <div id="mapid"></div>
 <script>
-
   var marker;
   var mymap = L.map('mapid').setView([39.8283, -98.5795], 5);
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -17,29 +16,19 @@
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1Ijoic2hhbmtyYW5nYSIsImEiOiJjanRxaGx0d2cwMnRqM3lxb3puaDl2cm4yIn0.-kk7WgAgOXrXS2AkedhL2A'
   }).addTo(mymap);
-  //var marker = L.marker([latLon]).addTo(mymap);
   $(document).ready(function () {
     $.ajax({
       type: "GET",
       url: "/api/players", // Using our resources.json file to serve results
       success: function (result) {
         console.log(result);
-
-
         $.each(result, function (key, value) {
-          alert('lat:' + value.Latitude + " long: " + value.Longitude);
           marker = L.marker([value.Latitude, value.Longitude]).addTo(mymap);
           marker.bindPopup("<b>Hello world!" + value.UserName + "<\/b><br>I am online.").openPopup();
 
         })
       }
     })
-
-    //res from database =
-    //var latLon = [res.latitude, res.longitude]
-
-
-
 
   }
   );

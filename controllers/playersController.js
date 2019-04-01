@@ -1,35 +1,22 @@
 // Requiring our Player model
 var db = require('../models');
+require('dotenv').config();
 
 // geocoder
 var NodeGeocoder = require('node-geocoder');
 
 var options = {
 	provider: 'mapquest',
-	apiKey: 'sX4NwELW6q0I1WjDtEvnSTLBwIU3o4hl',
+	apiKey: process.env.SECRETKEY,
 	// Optional depending on the providers
 	httpAdapter: 'https', // Default
 	formatter: null // 'gpx', 'string', ...
 };
 
 var geocoder = NodeGeocoder(options);
-// Import the model (player.js) to use its database functions.
-//var player = require('../models/player.js');
-// //passport Config
-// require("../config/passport.js")(passport);
-
-// //passport middle
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 module.exports = function (app) {
 	// Create all our routes and set up logic within those routes where required.
-
-	app.get('/Registration', function (req, res) {
-		db.Player.findAll({}).then(function (players) {
-			res.render('Registration', { data: players });
-		});
-	});
 	app.get('/api/players', function (req, res) {
 		db.Player.findAll({}).then(function (data) {
 			res.json(data);
@@ -37,8 +24,13 @@ module.exports = function (app) {
 	});
 
 	app.get('/', function (req, res) {
+		res.render('Registration');
+	});
+
+	app.get('/map', function (req, res) {
 		res.render('map');
 	});
+
 
 	app.post('/api/players', function (req, response) {
 		geocoder
@@ -67,11 +59,3 @@ module.exports = function (app) {
 			});
 	});
 };
-
-// app.post('/signup', passport.authenticate('local-signup', {
-//   successRedirect: '/dashboard',
-
-//   failureRedirect: '/signup'
-// }
-
-// ));
