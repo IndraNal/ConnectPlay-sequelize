@@ -5,5 +5,7 @@ ConnectPlay is a Social media web app that allows players to connect, communicat
 https://cherry-sundae-19493.herokuapp.com/
 
 Indra - database and backend logic
+
 Shank - map api and routes
+
 Emmanuel - frontend and password authentication 
